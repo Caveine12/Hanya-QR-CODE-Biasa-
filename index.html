@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Video</title>
+ <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body style="text-align:center; font-family:Arial; margin-top:30px;">
+
+  <h2>Hanya QR Code biasa</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    // Link video langsung
+    var videoPage = "video.html"; 
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: window.location.origin + "/" + videoPage,
+      width: 200,
+      height: 200
+    });
+  </script>
+
+</body>
+</html>
