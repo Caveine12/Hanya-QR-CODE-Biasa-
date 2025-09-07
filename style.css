@@ -1,0 +1,98 @@
+/* Background gradasi */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Container utama */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Judul */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+/* Kotak QR Code */
+#qrcode {
+  display: inline-block;
+  padding: 15px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  margin-bottom: 15px;
+  animation: zoomIn 0.8s ease;
+}
+
+/* Video Container */
+.video-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Video */
+video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Overlay judul video */
+.overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  animation: slideDown 0.7s ease;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes fadeInUp {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
