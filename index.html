@@ -12,8 +12,15 @@
   <div id="qrcode"></div>
 
   <script>
-    // Link video langsung
-    var videoPage = "video.html"; 
+    // Ubah ini:
+var videoPage = "video.html"; 
+new QRCode(document.getElementById("qrcode"), {
+  text: window.location.origin + "/" + videoPage,
+  width: 200,
+  height: 200,
+  colorDark : "#000000",
+  colorLight : "#ffffff"
+});
 
     new QRCode(document.getElementById("qrcode"), {
       text: window.location.origin + "/" + videoPage,
