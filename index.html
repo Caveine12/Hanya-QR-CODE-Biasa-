@@ -2,32 +2,32 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>QR Code Video</title>
- <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <title>Video Auto Play</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
-<body style="text-align:center; font-family:Arial; margin-top:30px;">
-
-  <h2>Hanya QR Code biasa</h2>
-  <div id="qrcode"></div>
+<body>
+  <p>Hanya QR CODE Biasa </p>
+  <video id="myVideo" autoplay playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
 
   <script>
-    // Ubah ini:
-var videoPage = "video.html"; 
-new QRCode(document.getElementById("qrcode"), {
-  text: window.location.origin + "/" + videoPage,
-  width: 200,
-  height: 200,
-  colorDark : "#000000",
-  colorLight : "#ffffff"
-});
-
-    new QRCode(document.getElementById("qrcode"), {
-      text: window.location.origin + "/" + videoPage,
-      width: 200,
-      height: 200
-    });
+    const video = document.getElementById("myVideo");
+    video.volume = 1.0; // full volume
   </script>
-
 </body>
 </html>
