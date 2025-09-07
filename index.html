@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Video</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Hanya QR CODE Biasa</h2>
+    <canvas id="qr"></canvas>
+    <p>Scan Jika Penasaran</p>
+  </div>
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('qr'),
+      value: 'video.html', // ganti dengan link video.html kamu
+      size: 220
+    });
+  </script>
+</body>
+</html>
