@@ -1,47 +1,22 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
-  <title>QR Code Video</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
-    #qrcode {
-      margin: 20px;
-    }
-    .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Autoplay Video</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </head>
-<body>
-  <div class="container">
-    <h2>Hanya QR Code Biasa</h2>
-    <div id="qrcode"></div>
-  </div>
+<body style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+  <h1>Scan untuk langsung putar video</h1>
+  <canvas id="qrcode"></canvas>
 
   <script>
-    // Link video YouTube (bisa diganti ke file video lain)
-    var videoLink = "https://youtu.be/LjPe_4bs3i4?si=-FbIl1DqTE2IlE0l";
+    // Ganti link di bawah dengan halaman video kamu
+    const videoPage = "https://contoh.com/video.html";
 
-    // Generate QR Code
-    new QRCode(document.getElementById("qrcode"), {
-      text: videoLink,
-      width: 200,
-      height: 200
+    QRCode.toCanvas(document.getElementById('qrcode'), videoPage, { width: 200 }, function (error) {
+      if (error) console.error(error);
+      console.log('QR Code dibuat!');
     });
   </script>
 </body>
