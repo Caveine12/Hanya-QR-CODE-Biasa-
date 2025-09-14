@@ -3,20 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Code Autoplay Video</title>
+  <title>QR Code Keren</title>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <style>
+    /* Background gradasi animasi */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #3a7bd5, #3a6073);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Card QR */
+    .qr-container {
+      background: white;
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Efek hover agar interaktif */
+    .qr-container:hover {
+      transform: scale(1.08);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
 </head>
-<body style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
-  <h1>Scan untuk langsung putar video</h1>
-  <canvas id="qrcode"></canvas>
+<body>
+  <h1>📱 Scan untuk Putar Video</h1>
+  <div class="qr-container">
+    <canvas id="qrcode"></canvas>
+  </div>
 
   <script>
-    // Ganti link di bawah dengan halaman video kamu
-    const videoPage = "https://caveine12.github.io/video-biasa-/";
-
-    QRCode.toCanvas(document.getElementById('qrcode'), videoPage, { width: 200 }, function (error) {
+    const linkVideo = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Ganti dengan link video kamu
+    QRCode.toCanvas(document.getElementById("qrcode"), linkVideo, { width: 300 }, function (error) {
       if (error) console.error(error);
-      console.log('QR Code dibuat!');
+      console.log("QR Code berhasil dibuat!");
     });
   </script>
 </body>
